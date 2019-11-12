@@ -1,0 +1,67 @@
+# The URL the site will be built for
+base_url = "https://codeshow.com.br"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "dinkleberg"
+
+# paginate_by = 5
+
+generate_rss = true
+
+generate_categories_pages = true
+generate_tags_pages = true
+
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
+
+[extra]
+blog_logo="/codeshow_logo.png" #will appear on top header
+blog_title="CodeShow" #will appear on top header after logo
+
+## i18n words
+label_tags = "Tags"
+label_tag = "Tag"
+label_categories = "Categorias"
+label_category = "Categoria"
+label_relative_posts = "Postagens Relacionadas"
+label_next = "Próxima"
+label_previous = "Anterior"
+label_page = "Página"
+label_of = "de"
+label_minutes = "minutos"
+
+og_image="/hands_in_show.png" # Image that will appear on social media
+og_alt_image="/codeshow.png" # Alt for og_image
+og_site_name="CodeShow" # Site Name for Open Graphic
+keywords="programação, desenvolvimento, programador, python, flask, rust, qualidade de software, engenharia de software" # Keywords for SEO
+
+educational_use="knowledge share" # OPTIONAL
+copyright_year="2018" # OPTIONAL
+
+#fb_app_id="???" # OPTIONAL, Facebook App Id to help in metrics
+twitter_username="@rochacbruno" # OPTIONAL, Twitter User to help with metrics
+
+## Sidebar automatic links
+sidebar = [
+    {name = "", urls=[
+        {name="Youtube", url="https://youtube.com/CodeShowBrunoRocha"},
+        {name="Twitter", url="https://twitter.com/rochacbruno"},
+        {name="Telegram", url="https://t.me/codeshowbr"},
+        {name="Github", url="https://github.com/codeshow"},
+    ]},
+    # {name = "Divida Conhecimento!", urls=[
+    #     {name="Contribuir!", url="https://rust-br.github.io/blog/hello-world"}
+    # ]}
+]

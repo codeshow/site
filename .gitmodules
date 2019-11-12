@@ -1,0 +1,3 @@
+[submodule "themes/dinkleberg"]
+	path = themes/dinkleberg
+	url = https://github.com/codeshow/dinkleberg
