@@ -1,0 +1,22 @@
+{% if not width %}
+    {% set width = 240 %}
+{% endif %}
+{% if not height %}
+    {% if width %}
+        {% set height = width %}
+    {% else %}
+        {% set height = 180 %}
+    {% endif %}
+{% endif %}
+{% if not op %}
+    {% set op = 'fill' %}
+{% endif %}
+
+{% for asset in page.assets %}
+  {% if asset is matching("[.](jpg|png)$") %}
+    <a href="{{ get_url(path=asset) }}">
+      <img src="{{ resize_image(path=path, width=width, height=height, op=op) }}" />
+    </a>
+    &ensp;
+  {% endif %}
+{% endfor %}

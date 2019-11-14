@@ -1,0 +1,29 @@
+{% extends "dinkleberg/templates/index.html" %}
+
+{% block content -%}
+    {% if config.extra.top_image %}
+    <a href="{{config.extra.top_image.url | default(value='/') | safe}}" target="{{config.extra.top_image.target | default(value='_self') | safe}}">
+        <img src="{{ resize_image(path=config.extra.top_image.path, width=config.extra.top_image.width, height=config.extra.top_image.height, op=config.extra.top_image.op) }}" style="max-width:100%;margin-bottom:20px;"/>
+    </a>
+    {% endif %}
+    <main class="main">
+        {%- for page in paginator.pages -%}
+            {{ macro::post(page=page) }}
+        {%- endfor -%}
+        {{ macro::post_nav(ref=paginator, extra=config.extra) }}
+    </main>
+{%- endblock content -%}
+{%- block sidebar %}
+    <aside class="sidebar">
+        {%- for sidebar in config.extra.sidebar %}
+            <h3>{{ sidebar.name }}</h3>
+            <ul class="base-list">
+                {%- for item in sidebar.urls %}
+                    <li>
+                        <a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {%- endfor %}
+    </aside>
+{% endblock sidebar %}

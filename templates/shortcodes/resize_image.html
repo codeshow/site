@@ -1,0 +1,32 @@
+{% if not width %}
+    {% set width = 240 %}
+{% endif %}
+{% if not height %}
+    {% if width %}
+        {% set height = width %}
+    {% else %}
+        {% set height = 180 %}
+    {% endif %}
+{% endif %}
+{% if not op %}
+    {% set op = 'fill' %}
+{% endif %}
+
+{% if class and class == 'top' %}
+    {% set style = 'padding:0' %}
+    {% set width = 1200 %}
+    {% set height = 200 %}
+{% endif %}
+
+{% if caption %}
+<figure>
+    <img src="{{ resize_image(path=path, width=width, height=height, op=op) }}"  class='{{ class | default(value="") }}' style='{{style | default(value="")}}' />
+    <figcaption>{{ caption }}</figcaption>
+</figure>
+{% elif figure %}
+<figure>
+    <img src="{{ resize_image(path=path, width=width, height=height, op=op) }}" class='{{ class | default(value="") }}' style='{{style | default(value="")}}' />
+</figure>
+{% else %}
+<img src="{{ resize_image(path=path, width=width, height=height, op=op) }}" class='{{ class | default(value="") }}' style='{{style| default(value="")}}' />
+{% endif %}
