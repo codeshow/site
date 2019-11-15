@@ -20,8 +20,6 @@ Esta postagem inaugura este blog e para começar nada melhor do que explicar
 a tecnologia utilizada para o gerenciamento do conteúdo por aqui e também falar sobre 
 os motivos que me levaram a adotar esta estratégia.
 
-Este conteúdo também está disponível em [Vídeo](https://www.youtube.com/c/CodeShowBrunoRocha?sub_confirmation=1) e [Áudio](https://anchor.fm/codeshow).
-
 ---
 
 # Criando seu blog com Zola e hospedando de graça na Netlify
@@ -73,13 +71,6 @@ A versão mais atual no momento desta postagem é a `0.9.0` e para iniciar o seu
 > Considerando um sistema Linux, porém se você estiver no Windows ou Mac veja os links na página de releases e adapte para o seu O.S.
 
 ```bash
-# Criando o diretorio raiz
-mkdir meublog
-cd meublog
-
-# Inicializando como um repositorio git
-git init
-
 # Baixando o Zola
 wget https://github.com/getzola/zola/releases/download/v0.9.0/zola-v0.9.0-x86_64-unknown-linux-gnu.tar.gz
 
@@ -125,9 +116,26 @@ Get started by moving into the directory and using the built-in server: `zola se
 Visit https://www.getzola.org for the full documentation.
 ```
 
+> **detalhe**: O binário `zola` vai precisar ficar na raiz de seu projeto para facilitar a automatização do deploy.
+
+```bash
+mv zola blog/
+```
+
+A pasta `blog` será a raiz do repositório git do seu site, portanto precisamos inicializar esta pasta como um repositório git.
+
+```bash
+# entre na raiz do projeto zola
+cd blog
+
+# transforme em um git repo
+git init
+```
+
 Agora a pasta `blog` contém a seguinte estrutura:
 
 ```console
+├── zola           # Binário executável do Zola
 ├── config.toml    # Configurações do Zola
 ├── content/       # Postagens e Páginas em Markdown
 ├── sass/          # CSS dinâmico
@@ -136,22 +144,11 @@ Agora a pasta `blog` contém a seguinte estrutura:
 └── themes/        # Temas
 ```
 
-A pasta `blog` será a raiz do repositório git do seu site.
-
-> **detalhe**: O binário `zola` vai precisar ficar na raiz de seu repositório no github para facilitar a automatização do deploy.
-
-```bash
-mv zola blog/
-```
-
 ## Servindo o site em modo desenvolvimento
 
 O objectivo final é gerar um site estático, porém durante a escrita ou desenvolvimento é interessante servir o conteúdo e ir acompanhando o preview das postagens.
 
 ```bash
-# Entre na raiz do site
-cd blog
-
 # Execute o zola dev server
 ./zola serve
 
@@ -293,9 +290,9 @@ Mas... nós queremos automatizar o processo, toda vez que criarmos ou editarmos 
 
 Para começar precisamos que o site esteja em um repositório público no github pois é de lá que o Netlify vai ler os arquivos, você pode ver um exemplo no repositório deste blog [https://github.com/codeshow/site](https://github.com/codeshow/site).
 
-Se a sua pasta `blog` ainda não é um repositório execute `$ git init` para transforma-la em um.
+> Se a sua pasta `blog` ainda não é um repositório execute `$ git init` para transforma-la em um.
 
-> **detalhe** a pasta `themes/hyde` é um submodulo git, portanto será necessário rodar `git submodule init` para incluir esta referencia no git.
+> **detalhe** a pasta `themes/hyde` é um submodulo git, portanto pode ser necessário rodar `git submodule init` para incluir esta referencia no git.
 
 Assim que o seu site estiver no Github/Gitlab por exemplo em `https://github.com/voce/blog` contendo em sua raiz o arquivo `config.toml` e o binário `zola` podemos então passar para a automatização de deploy no Netlify.
 
@@ -399,10 +396,12 @@ Explore as features do Netlify e do Zola tem muito mais coisa legal que pode ser
 
 Caso você descubra uma dica legal por favor compartilhe nos comentários!
 
-## Links
+## Referências
 
 - **Zola** - [https://getzola.org](https://getzola.org)
 - **Netlify** - [https://netlify.com](https://netlify.com)
 - **VSCode** -  [https://code.visualstudio.com](https://code.visualstudio.com)
 
-Este conteúdo também está disponível em [Vídeo](http://Youtube.com/CodeshowBrunoRocha) e [Áudio](https://anchor.fm/codeshow).
+{{ embeds(audio="01---CodeShow---Como-criar-um-blog-ou-site-esttico-usando-Zola--Github-e-Netlify-e90imp")}}
+
+---
