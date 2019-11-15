@@ -33,6 +33,37 @@
                 line-height: 20px;
             }
         }
+        .media-container {
+            position: relative;
+            padding-top: 30px; height: 0; overflow: hidden;
+            }
+             
+            .media-container iframe,
+            .media-container object,
+            .media-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .audio-container{
+                padding-bottom: 20%;
+            }
+            .audio-container iframe,
+            .audio-container object,
+            .audio-container embed {
+                height: 102px;
+            }
+
+            .video-container{
+                padding-bottom: 56.25%;
+            }
+            .video-container iframe,
+            .video-container object,
+            .video-container embed {
+                height: 100%;
+            }
     </style>
 {% endblock css -%}
 

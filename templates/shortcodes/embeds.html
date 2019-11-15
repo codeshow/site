@@ -1,0 +1,26 @@
+{% if video or audio %}
+Este conteúdo também está disponível em:
+{% endif %}
+
+{% if video %}
+<a href="https://www.youtube.com/watch?v={{video}}" target="_blank">Vídeo</a>
+<div class="media-container video-container">
+    <iframe
+        src="https://www.youtube.com/embed/{{video}}{% if autoplay %}?autoplay=1{% endif %}"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+        width="853" height="480"
+        frameborder="0"
+        scrolling="no">
+    </iframe>
+</div>
+{% endif %}
+<br/>
+{% if audio %}
+<a href="https://anchor.fm/codeshow/episodes/{{ audio }}" target="_blank">Áudio</a>
+<div class="media-container audio-container">
+<iframe src="https://anchor.fm/codeshow/embed/episodes/{{audio}}" height="102px" width="300px" frameborder="0" scrolling="no"></iframe>
+</div>
+{% endif %}
+
