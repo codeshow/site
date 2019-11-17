@@ -64,6 +64,7 @@ sidebar = [
         {name="🐤 Twitter", url="https://twitter.com/rochacbruno", target="_blank"},
         {name="💬 Telegram", url="https://t.me/codeshowbr", target="_blank"},
         {name="💻 Github", url="https://github.com/codeshow", target="_blank"},
+        {name="💵 Apoie", url="https://apoia.se/codeshow", target="_blank"},
     ]},
     {name = "Conteúdo:", urls=[
         {name="🗃 Categorias", url="/categories", target="_self"},

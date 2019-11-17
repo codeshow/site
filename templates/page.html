@@ -108,7 +108,12 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
-
+            {% if page.date %}
+            <div>
+                <span itemprop="datePublished">{{ page.date | date(format="%d/%m/%Y") }}</span>
+                - {{ page.reading_time }} {{ config.extra.label_minutes }}
+            </div>
+            {% endif %}
             {% if page.extra.relative_posts %}
                 <div class="relative-posts">
                     {{config.extra.label_relative_posts}}:
