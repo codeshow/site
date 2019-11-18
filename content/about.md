@@ -67,5 +67,5 @@ Este site utiliza o [Zola](@/2019-11-13-criando-seu-blog-com-zola/index.md)
 
 O código está disponível no [github](https://github.com/codeshow/site) e caso encontre um erro a ser corrigido seu Pull Request será bem-vindo!
 
-Este site está hospedado gratuitament no Netlify
+Este site está hospedado gratuitamente na Netlify
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b032e782-b54d-4cd1-a71a-c6afd5857f4b/deploy-status)](https://app.netlify.com/sites/codeshowbr/deploys)

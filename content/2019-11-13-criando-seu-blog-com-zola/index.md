@@ -51,16 +51,16 @@ Dei uma rápida olhada em seu [código fonte](https://github.com/getzola/zola) p
 
 Algumas coisas me fizeram escolher o **Zola**
 
-- Escrito em **Rust** (motivo para praticar e contribuir)
-- Markdown!!!
-- Binário único `$ zola` com tudo incluido para gerar o blog.
-- Templates [tera](https://tera.netlify.com/) que tem a sintaxe bem parecida com o [Jinja](https://jinja.palletsprojects.com/) do **Python**.
+- Escrito em **Rust** (Rápido e Seguro)
+- `# Markdown é **amor**`
+- Binário único `$ zola`, apenas `20MB` com tudo incluido para gerar o blog.
+- Templates [Tera](https://tera.netlify.com/) que tem a `{{ sintaxe }}` bem parecida com o [Jinja](https://jinja.palletsprojects.com/) do **Python**.
 - Syntax Highlight.
-- Shortcodes (diretivas markdown customizáveis).
+- Shortcodes (diretivas Markdown customizáveis).
 - Processamento de imagens.
-- Muitos Temas.
+- Muitos [Temas](https://www.getzola.org/themes/).
 - Deploy simples na Netlify e Github Pages.
-- Todas as features básicas de um gerador de sites estáticos.
+- Todas as features de um gerador de sites estáticos.
 
 ## Instalação
 
@@ -68,10 +68,10 @@ Na verdade não há instalação, o **Zola** é distribuído já compilado e é 
 
 A versão mais atual no momento desta postagem é a `0.9.0` e para iniciar o seu **Blog** você pode seguir estes passos.
 
-> Considerando um sistema Linux, porém se você estiver no Windows ou Mac veja os links na página de releases e adapte para o seu O.S.
+> Considerando um sistema Linux, porém se você estiver no [Windows](https://github.com/getzola/zola/releases/download/v0.9.0/zola-v0.9.0-x86_64-pc-windows-msvc.zip) ou [Mac](https://github.com/getzola/zola/releases/download/v0.9.0/zola-v0.9.0-x86_64-apple-darwin.tar.gz) veja os links na página de [releases](https://github.com/getzola/zola/releases) e adapte para o seu O.S.
 
 ```bash
-# Baixando o Zola
+# Baixando o Zola (linux)
 wget https://github.com/getzola/zola/releases/download/v0.9.0/zola-v0.9.0-x86_64-unknown-linux-gnu.tar.gz
 
 # Descompactando
@@ -182,12 +182,12 @@ Mesmo que o tema não te agrade 100% você poderá customizar apenas as partes q
 
 O tema mais simples é o [hyde](https://zola-hyde.netlify.com/) vamos então instalar e começar a utilizar ele para criar nossos conteúdos.
 
-Primeiro faça download to tema para a sua pasta `themes`:
+Primeiro faça download to tema para a sua pasta `themes` mas faremos isso usando um submódulo git desta forma será fácil obter atualizações quando o repositório do tema for atualizado:
 
 ```bash
-cd themes
-git clone https://github.com/getzola/hyde.git
-cd ..
+git submodule add https://github.com/codeshow/hyde.git themes/hyde
+
+Cloning into '/tmp/fixedwid/blogtest/blog/themes/hyde'...
 ```
 
 agora edite o arquivo `config.toml` e adicione logo antes de `[extra]`:
@@ -219,12 +219,27 @@ Neste momento ao acessar o blog já será possivel notar a diferença mas ainda 
 
 Todo o conteúdo será escrito na pasta `content/` e o funcionamento é bastante simples:
 
-- `content/nome-da-postagem.md` - Qualquer arquivo **markdown** é considerado um novo **post**, ou seja, para postar no blog basta criar um novo arquivo.
-- `content/nome-da-postagem/index.md` - Um post tbm pode ser escrito em uma pasta contendo um `index.md` desta maneira podemos agregar outros formatos de arquivo em uma mesma postagem.
+- `content/nome-da-postagem.md` - Qualquer arquivo **markdown** é considerado um novo conteúdo, que pode ser `page` ou `post`.
+- `content/nome-da-postagem/index.md` - Um conteúdo tbm pode ser escrito em uma pasta contendo um `index.md` desta maneira podemos agregar outros formatos de arquivo em uma mesma postagem.
 - `content/nome-da-postagem/foto.png` - Quando a postagem é colocada em uma pasta podemos agregar qualquer arquivo estático para linkar no diretamente conteúdo, por exemplo para inserir a imagem no markdown com `![foto](foto.png)`.
 - `_index.md` - Meta arquivo onde definimos [opções](https://www.getzola.org/documentation/content/section/#front-matter) de template, paginação e ordenação para uma seção, por exemplo, um `_index.md` na raiz da pasta `content` é onde definiremos as opções de listagem de conteúdo (índice do blog).
 - `content/subpasta/nome-da-postagem.md` - Podemos organizar seções em subpastas.
 - `content/subpasta/_index.md` - o arquivo `_index.md` será o meta indice da seção.
+
+Diferença entre **Page** e **Post**:
+
+#### Page
+
+Uma `page` não aparece nas listagens do site, nem no indice de paginação e nem no RSS. Para acessar a página é preciso linkar a sua
+URL.
+
+Qualquer conteúdo que não contenha o metadado `date` é considerado uma **page**, ex: `content/about.md`, `content/contato.md`
+
+#### Post
+
+Um `post` aparece na listagem e paginação da seção e também aparece no RSS.
+
+Qualquer conteúdo contento o metadado `date` ou com o seu arquivo nomeado com o prefixo da data ex: `content/2019-11-17-nome-do-artigo.md` será considerado um `post`
 
 ### Seu primeiro post
 
@@ -266,13 +281,37 @@ def hello():
 
 Salve o seu post em `content/2019-11-14-meu-primeiro-post.md` e acesse o blog:
 
-> Não é obrigatório, mas é recomendado iniciar os arquivos com a data atual, desta forma na hora de editar no seu editor preferido você consegue ordenar por data facilmente.
+> Não é obrigatório, mas é recomendado iniciar os artigos com a data atual, desta forma na hora de editar no seu editor preferido você consegue ordenar por data facilmente e o zola irá utilizar a data informada no nome do arquivo como metadado de data do artigo.
 
 ![meu blog maravilhoso](post_list.png)
 
 e ao clicar
 
 ![meu blog maravilhoso](post_page.png)
+
+
+Para customizar as [opções da sua home page](https://www.getzola.org/documentation/content/section/#front-matter) crie um meta arquivo `_index.md` por exemplo para definir que a ordenação será por data o `content/_index.md` irá conter:
+
+```md
++++
+sort_by = "date"
++++
+```
+
+### Criando uma página não lista
+
+Como a nossa ordenação é por `date` qualquer conteúdo que não contenha uma data será ignorado na listagem da home-page e portanto será uma página acessivel apenas atraves do link. Para criar uma página `/about` crie o arquivo `content/about.md` contento:
+
+```md
++++
+title = "Sobre meu blog"
++++
+
+Olá este é meu blog! saiba mais aqui..
+
+```
+
+E então esta página não será listada na home mas você poderá acessar via http://127.0.0.1:1111/about/ e incluir o link `/about` nos links do seu `config.toml`
 
 Agora é com você efetuar as cutomizações nos `templates/` para ter uma idéia pode olhar como eu fiz para este site em [https://github.com/codeshow/site](https://github.com/codeshow/site)
 
