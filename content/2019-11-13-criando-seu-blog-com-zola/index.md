@@ -239,7 +239,7 @@ Qualquer conteúdo que não contenha o metadado `date` é considerado uma **page
 
 Um `post` aparece na listagem e paginação da seção e também aparece no RSS.
 
-Qualquer conteúdo contento o metadado `date` ou com o seu arquivo nomeado com o prefixo da data ex: `content/2019-11-17-nome-do-artigo.md` será considerado um `post`
+Qualquer conteúdo contento o metadado `date` ou com o seu arquivo nomeado com o prefixo da data ex: `content/2019-11-17-nome-do-artigo.md` será considerado um `post` o formato de data completa precisa seguir o padrão de datetime do TOML que é `%Y-%m-%dT%H:%M:%SZ`, ou seja, `2019-11-14T12:00:00Z` para representar **14/11/2019 12:00**
 
 ### Seu primeiro post
 
@@ -257,7 +257,7 @@ o **Zola** ainda tem suporte a [shotcodes](https://www.getzola.org/documentation
 ````md
 +++
 title = "Meu primeiro post"
-date = 2019-11-14
+date = 2019-11-14T12:00:00Z
 draft = false
 +++
 
@@ -298,7 +298,7 @@ sort_by = "date"
 +++
 ```
 
-### Criando uma página não lista
+### Criando uma página não listada
 
 Como a nossa ordenação é por `date` qualquer conteúdo que não contenha uma data será ignorado na listagem da home-page e portanto será uma página acessivel apenas atraves do link. Para criar uma página `/about` crie o arquivo `content/about.md` contento:
 
@@ -434,6 +434,13 @@ Pronto! a partir de agora basta criar um novo arquivo **markdown** no seu reposi
 Explore as features do Netlify e do Zola tem muito mais coisa legal que pode ser feita.
 
 Caso você descubra uma dica legal por favor compartilhe nos comentários!
+
+## Outras opções de deploy
+
+- O ZEIT now também tem suporte a deploys do **zola** https://zeit.co/new/zola
+- Github pages com Travis também é uma opção https://www.getzola.org/documentation/deployment/github-pages/
+- E também tem o Gitlab se vc preferir https://www.getzola.org/documentation/deployment/gitlab-pages/
+
 
 ## Referências
 
