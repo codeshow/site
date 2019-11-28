@@ -128,7 +128,7 @@ A pasta `blog` será a raiz do repositório git do seu site, portanto precisamos
 # entre na raiz do projeto zola
 cd blog
 
-# transforme em um git repo
+# transforme o projeto em um repositório git
 git init
 ```
 
@@ -441,13 +441,12 @@ Caso você descubra uma dica legal por favor compartilhe nos comentários!
 - Github pages com Travis também é uma opção https://www.getzola.org/documentation/deployment/github-pages/
 - E também tem o Gitlab se vc preferir https://www.getzola.org/documentation/deployment/gitlab-pages/
 
-
 ## Referências
 
 - **Zola** - [https://getzola.org](https://getzola.org)
 - **Netlify** - [https://netlify.com](https://netlify.com)
 - **VSCode** -  [https://code.visualstudio.com](https://code.visualstudio.com)
 
-{{ embeds(audio="01---CodeShow---Como-criar-um-blog-ou-site-esttico-usando-Zola--Github-e-Netlify-e90imp")}}
+{{ embeds(audio="01---CodeShow---Como-criar-um-blog-ou-site-esttico-usando-Zola--Github-e-Netlify-e90imp", video="0VoT4DolHOk")}}
 
 ---
