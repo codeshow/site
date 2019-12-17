@@ -1,4 +1,5 @@
 {% extends "dinkleberg/templates/index.html" %}
+{% import "macros.html" as macro %}
 
 {%- block seo %}
     
@@ -47,7 +48,7 @@
     {% if config.extra.twitter_username -%}
         <meta name="twitter:site" content="{{config.extra.twitter_username}}">
     {%- endif -%}
-
+    <script src="https://apis.google.com/js/platform.js"></script>
     {% if config.extra.ganalytics %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.ganalytics}}"></script>
@@ -61,7 +62,7 @@
     {% endif %}
 
     {%- if config.extra.podcast_rss %}
-    <link rel="alternate" type="application/rss+xml" title="Podcast" href="{{ config.extra.podcast_rss }}">
+    <link rel="alternate" type="application/rss+xml" title="CodeShow Cast - Podcast" href="{{ config.extra.podcast_rss | safe }}">
     {%- endif -%}
 
 {% endblock seo %}
@@ -73,6 +74,16 @@
     </a>
     {% endif %}
     <main class="main">
+        <h3>Vídeo mais recente <div class="g-ytsubscribe" data-channelid="UCMre98RDRijOX_fvG1gnsYg" data-layout="default" data-count="default"></div> </h3>
+        <div class="media-container video-container">
+            <iframe width="300" height="220" src="https://www.youtube.com/embed?max-results=1&controls=1&showinfo=0&rel=0&listType=user_uploads&list=brunovegan" frameborder="0" allowfullscreen></iframe> 
+        </div>
+        <h3>Áudio mais recente <a class="spotify" href="https://open.spotify.com/show/19jhXg48ecLnAuj9GIeE2M" target="_blank"><img src="spotify.png" alt="Escute no Spotify"></a> </h3>
+        <div class="media-container audio-container">
+            <iframe src="https://anchor.fm/codeshow/embed" height="102" width="350" frameborder="0" scrolling="no"></iframe>
+            <small>Escute mais em <a href="https://anchor.fm/codeshow">https://anchor.fm/codeshow</a></small>
+        </div>
+        <h3>Blog posts</h3>
         {%- for page in paginator.pages -%}
             {{ macro::post(page=page) }}
         {%- endfor -%}
@@ -91,10 +102,5 @@
                 {% endfor %}
             </ul>
         {%- endfor %}
-        <h3>Vídeo mais recente</h3>
-        <iframe width="350" height="220" src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=brunovegan" frameborder="0" allowfullscreen></iframe> 
-        <h3>Áudio mais recente</h3>
-        <iframe src="https://anchor.fm/codeshow/embed" height="102px" width="350px" frameborder="0" scrolling="no"></iframe>
-        <small>Escute mais em <a href="https://anchor.fm/codeshow">https://anchor.fm/codeshow</a></small>
     </aside>
 {% endblock sidebar %}

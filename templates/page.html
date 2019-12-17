@@ -7,66 +7,6 @@
 {% block ogaltimg %}{{page.title}}{% endblock ogaltimg %}">
 {% block ogimg %}{% if page.extra.image %}{{page.extra.image}}{% else %}{% if config.extra.og_image %}{{config.extra.og_image}}{% endif %}{% endif %}{% endblock ogimg %}
 
-
-{% block css %}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Code+Pro">
-    <link rel="stylesheet" href="/site.css">
-    <style>
-        .avatar {
-            display: none;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 15px;
-            width: 50%;
-            border-radius: 50%;
-            max-width:150px;
-        }
-        @media screen and (min-width: 900px) {
-            .avatar{
-                display: block;
-            }
-            .sidebar {
-                width: 100%;
-                float:unset;
-                margin-top:10px;
-                font-size: 18px;
-                line-height: 20px;
-            }
-        }
-        .media-container {
-            position: relative;
-            padding-top: 30px; height: 0; overflow: hidden;
-            }
-             
-            .media-container iframe,
-            .media-container object,
-            .media-container embed {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-            }
-
-            .audio-container{
-                padding-bottom: 20%;
-            }
-            .audio-container iframe,
-            .audio-container object,
-            .audio-container embed {
-                height: 102px;
-            }
-
-            .video-container{
-                padding-bottom: 56.25%;
-            }
-            .video-container iframe,
-            .video-container object,
-            .video-container embed {
-                height: 100%;
-            }
-    </style>
-{% endblock css -%}
-
 {% block content %}
 <article itemscope itemtype="http://schema.org/BlogPosting" class="post post-page">
     {% if page.extra.image %}
@@ -128,6 +68,8 @@
             {% endif %}
 
             <aside class="sidebar">
+                    <div class="g-ytsubscribe" data-channelid="UCMre98RDRijOX_fvG1gnsYg" data-layout="full" data-count="default"></div>
+                    <a href="https://open.spotify.com/show/19jhXg48ecLnAuj9GIeE2M" target="_blank"><img src="/spotify.png" alt="Escute no Spotify"></a>
             {%- for sidebar in config.extra.sidebar %}
                 <!-- <h3>{{ sidebar.name }}</h3> -->
                 <hr>

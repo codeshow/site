@@ -1,0 +1,53 @@
+{% macro post(page) %}
+    <a class="post" href="{{page.permalink}}">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            {% if page.extra.image %}
+                <meta itemprop="image" content="{{page.extra.image}}">
+            {% else %}
+                {% if config.extra.og_image %}
+                    <meta itemprop="image" content="{{config.extra.og_image}}">
+                {% endif %}
+            {% endif %}
+            {% if page.taxonomies.categories %}<span class="category">{{page.taxonomies.categories[0]}}</span>{% endif %}
+            <div class="post-image">
+                {% if page.extra.image %}
+                    <img src="{{ resize_image(path=page.extra.image, width=100, height=100, op='fill') }}" class='{{ class | default(value="") }}' style='{{style| default(value="")}}' />
+                {% endif %}
+            </div>
+            <div class="post-info">
+                <h2 class="title" itemprop="headline">{{page.title}}</h2>
+                <span class="description">{{page.description}}</span>
+
+                <address itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span itemprop="name">{{page.extra.author}}</span>
+                </address>
+            </div>
+            <div class="extra">
+                <span itemprop="datePublished">{{ page.date | date(format="%d/%m/%Y") }}</span>
+                - {{ page.reading_time }} {{ config.extra.label_minutes }}
+            </div>
+        </article>
+    </a>
+{% endmacro post %}
+
+{% macro post_nav(ref, extra) %}
+    <nav class="page-navigator">
+        {% if ref.previous %}
+            <a href="{{ ref.previous }}">&laquo; {{ extra.label_previous }}</a>
+        {% else %}
+            <span>&laquo; {{ extra.label_previous }}</span>
+        {% endif %}
+            <span class="pages"> {{ extra.label_page }} {{ ref.current_index }} {{extra.label_of}} {{ ref.number_pagers }} </span>
+        {% if ref.next %}
+            <a href="{{ ref.next }}">{{ extra.label_next }} &raquo;</a>
+        {% else %}
+            <span>{{ extra.label_next }} &raquo;</span>
+        {% endif %}
+    </nav>
+{% endmacro %}
+
+{% macro organization(itemprop) %}
+    <div {% if itemprop %} itemprop="{{itemprop}}" {% endif %}
+     itemscope itemtype="http://schema.org/Organization">
+    </div>
+{% endmacro %}

@@ -12,6 +12,7 @@ tags = ["blog", "zola", "rust", "static-site"]
 [extra]
 author = "rochacbruno"
 comments = true
+image = "../static/hands_in_show.png"
 +++
 
 {{ resize_image(path="../static/hands_in_show.png", class='top') }}
