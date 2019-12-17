@@ -1,5 +1,6 @@
 +++
 title = "Criando convites com Python"
+description = "Aprenda a usar a Python Imaging Library para criar convites de aniversário."
 date = 2019-12-05T11:00:00Z
 draft = false
 
@@ -10,6 +11,7 @@ categories = ["tutorial"]
 [extra]
 author = "rochacbruno"
 comments = true
+image = "../content/2019-12-05-criar-convite-com-python/top.jpg"
 +++
 
 # Faça convites de aniversário com Python
@@ -197,4 +199,4 @@ Pare de imprimir convites e faça convites personalizados com Python. Ahh e por 
 - **Fontes** -  [https://www.1001freefonts.com/](https://www.1001freefonts.com/)
 - **Tutorial de PIL** - [https://note.nkmk.me/en/python-pillow-basic/](https://note.nkmk.me/en/python-pillow-basic/)
 
-{{ embeds(video="Qbyulb4P3UQ")}}
+{{ embeds(video="Qbyulb4P3UQ", audio="002---Python-Imaging-Library---Biblioteca-de-Manipulao-de-imagens---Codeshow-e9dv9o")}}
