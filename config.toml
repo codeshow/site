@@ -58,7 +58,8 @@ twitter_username="@rochacbruno" # OPTIONAL, Twitter User to help with metrics
 ## Sidebar automatic links
 sidebar = [
     {name = "Links:", urls=[
-        {name="📺 Youtube", url="http://www.youtube.com/c/codeshowbr?sub_confirmation=1", target="_blank"},
+        {name="📺 Twitch", url="https://twitch.tv/codeshow", target="_blank"},
+        {name="▶ Youtube", url="https://www.youtube.com/c/codeshowbr?sub_confirmation=1", target="_blank"},
         {name="🎙 Podcast", url="https://anchor.fm/codeshow", target="_blank"},
         {name="📸 Instagram", url="https://instagram.com/codeshowbr", target="_blank"},
         {name="🐤 Twitter", url="https://twitter.com/rochacbruno", target="_blank"},
