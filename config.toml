@@ -68,6 +68,7 @@ sidebar = [
         {name="💵 Apoie", url="https://apoia.se/codeshow", target="_blank"},
     ]},
     {name = "Conteúdo:", urls=[
+        {name="🏫 Cursos", url="/curso", target="_self"},
         {name="🗃 Categorias", url="/categories", target="_self"},
         {name="🏷 Tags", url="/tags", target="_self"},
         {name="🖼 Sobre", url="/about", target="_self"},
