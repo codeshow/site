@@ -1,7 +1,7 @@
 +++
 title = "Desenvolvimento web com Python e Flask"
 description = "Curso Intensivo de Python e Flask para desenvolvimento web."
-date = 2020-08-28T11:00:00Z
+date = 2020-05-28T11:00:00Z
 draft = false
 
 [taxonomies]
