@@ -66,7 +66,7 @@ Agora crie um script Python chamado de `convite.py`:
 
 ```python
 1 from PIL import Image, ImageDraw
-2 
+2
 3 imagem = Image.open("./template.png").convert("RGBA")
 4 lapis = ImageDraw.Draw(imagem)
 5 lapis.line((100, 146, 398, 146), fill="#ccc", width=5)
@@ -141,15 +141,15 @@ for convidado in CONVIDADOS:
     lapis = ImageDraw.Draw(imagem)
 
     lapis.text(
-        (125, 100), 
-        text=f"Olá {convidado}", 
-        fill="#000", 
+        (125, 100),
+        text=f"Olá {convidado}",
+        fill="#000",
         font=font1
     )
 
     lapis.line(
-        (LEFT_BORDER, 145, 398, 145), 
-        fill="#ccc", 
+        (LEFT_BORDER, 145, 398, 145),
+        fill="#ccc",
         width=5
     )
 
@@ -161,16 +161,16 @@ for convidado in CONVIDADOS:
     )
 
     lapis.text(
-        (LEFT_BORDER, 200), 
-        text="Dia 31/03/2020", 
-        fill="#000", 
+        (LEFT_BORDER, 200),
+        text="Dia 31/03/2020",
+        fill="#000",
         font=font2
     )
 
     lapis.text(
-        (LEFT_BORDER, 280), 
-        text="Abraços!", 
-        fill="#000", 
+        (LEFT_BORDER, 280),
+        text="Abraços!",
+        fill="#000",
         font=font2
     )
 
@@ -199,4 +199,4 @@ Pare de imprimir convites e faça convites personalizados com Python. Ahh e por 
 - **Fontes** -  [https://www.1001freefonts.com/](https://www.1001freefonts.com/)
 - **Tutorial de PIL** - [https://note.nkmk.me/en/python-pillow-basic/](https://note.nkmk.me/en/python-pillow-basic/)
 
-{{ embeds(video="Qbyulb4P3UQ", audio="002---Python-Imaging-Library---Biblioteca-de-Manipulao-de-imagens---Codeshow-e9dv9o")}}
+{{ embeds(video="Qbyulb4P3UQ")}}

@@ -3,21 +3,20 @@ title = "Sobre o Codeshow"
 draft = false
 
 [extra]
-image = "/static/hands_in_show.png"
+image = "/static/top_banner.png"
 author = 'rochacbruno'
 +++
 
-{{ resize_image(path="../static/hands_in_show.png", class='top') }}
+{{ resize_image(path="../static/top_banner.png", class='top') }}
 
 # Sobre CodeShow
 
 Bruno Rocha, Engenheiro de Software na Red Hat, Membro da Python Software Foundation e programador
-com mais de 15 anos de experiência compartilha contéudo técnico com foco em código sobre Python, Rust, Flask e outros assuntos.
+com mais de 15 anos de experiência compartilha contéudo técnico com foco em código sobre Python, Rust, Flask, FastAPI e outros assuntos.
 
 ## Periodicidade
 
-- Videos no Youtube quase toda semana
-- Live Coding: Terças, quintas e Sábados na Twitch
+- Videos no Youtube toda semana
 
 ## Objetivos
 

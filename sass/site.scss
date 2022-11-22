@@ -5,7 +5,8 @@ $color-black: rgba(0,0,0,.84);
 $color-grey: rgba(0,0,0,.54);
 $color-lgrey: rgba(0,0,0,0.20);
 $color-link: #2c3e50;
-$color-codeshow: #8AC9B9;
+/* $color-codeshow: #8AC9B9; */
+$color-codeshow: #fff;
 
 body {
     margin: 0;
@@ -38,10 +39,10 @@ pre {
 
 code {
     color: #e74c3c;
-    border: 1px solid #ecf0f1;
+    /* border: 1px solid #ecf0f1; */
     padding: 5px;
     border-radius: 5px;
-    background: rgba(236, 240, 241, 0.19);
+    /* background: rgba(236, 240, 241, 0.19); */
 }
 
 h3 {
@@ -179,9 +180,9 @@ h3 {
 .media-container {
     position: relative;
     padding-top: 30px; height: 0; overflow: hidden;
-    
+
     }
-     
+
     .media-container iframe,
     .media-container object,
     .media-container embed {

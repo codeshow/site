@@ -18,8 +18,8 @@
     {% endif %}
     <header>
         {% if page.extra.author %}
-        <img 
-          class="avatar" 
+        <img
+          class="avatar"
           src="{{config.extra.authors[page.extra.author].avatar }}"
         />
         <h1 class="title" itemprop="headline">{{ page.title }}</h1>
@@ -69,7 +69,6 @@
 
             <aside class="sidebar">
                     <div class="g-ytsubscribe" data-channelid="UCMre98RDRijOX_fvG1gnsYg" data-layout="full" data-count="default"></div>
-                    <a href="https://open.spotify.com/show/19jhXg48ecLnAuj9GIeE2M" target="_blank"><img src="/spotify.png" alt="Escute no Spotify"></a>
             {%- for sidebar in config.extra.sidebar %}
                 <!-- <h3>{{ sidebar.name }}</h3> -->
                 <hr>
@@ -86,12 +85,12 @@
     </header>
     <div itemprop="articleBody" class="body">
       {{ page.content | safe }}
-       
+
       {% if page.extra.comments %}
         <div id="disqus_container">
             <div id="disqus_thread"></div>
             <script>
-            
+
             /**
             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/

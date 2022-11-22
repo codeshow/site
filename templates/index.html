@@ -2,7 +2,7 @@
 {% import "macros.html" as macro %}
 
 {%- block seo %}
-    
+
 <link rel="apple-touch-icon" sizes="57x57" href="{{ get_url(path="/apple-icon-57x57.png", trailing_slash=false) }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ get_url(path="/apple-icon-60x60.png", trailing_slash=false) }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ get_url(path="/apple-icon-72x72.png", trailing_slash=false) }}">
@@ -76,26 +76,9 @@
     </a>
     {% endif %}
     <main class="main">
-        <h3>Live Stream</h3>
-        <span>Terças 21h (Rust) Quintas 21h (Python)</span>
-        <div class="media-container video-container">
-            <iframe
-    src="https://player.twitch.tv/?channel=codeshow&parent=codeshow.com.br"
-    height="720"
-    width="1280"
-    frameborder="0"
-    scrolling="no"
-    allowfullscreen="true">
-</iframe>
-        </div>        
         <h3>Vídeo mais recente <div class="g-ytsubscribe" data-channelid="UCMre98RDRijOX_fvG1gnsYg" data-layout="default" data-count="default"></div> </h3>
         <div class="media-container video-container">
-            <iframe width="300" height="220" src="https://www.youtube.com/embed?max-results=1&controls=1&showinfo=0&rel=0&listType=user_uploads&list=brunovegan" frameborder="0" allowfullscreen></iframe> 
-        </div>
-        <h3>Áudio mais recente <a class="spotify" href="https://open.spotify.com/show/19jhXg48ecLnAuj9GIeE2M" target="_blank"><img src="spotify.png" alt="Escute no Spotify"></a> </h3>
-        <div class="media-container audio-container">
-            <iframe src="https://anchor.fm/codeshow/embed" height="102" width="350" frameborder="0" scrolling="no"></iframe>
-            <small>Escute mais em <a href="https://anchor.fm/codeshow">https://anchor.fm/codeshow</a></small>
+            <iframe width="300" height="220" src="https://www.youtube.com/embed?max-results=1&controls=1&showinfo=0&rel=0&listType=user_uploads&list=brunovegan" frameborder="0" allowfullscreen></iframe>
         </div>
         <h3>Blog posts</h3>
         {%- for page in paginator.pages -%}
