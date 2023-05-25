@@ -3,7 +3,7 @@ title = "Sobre o Codeshow"
 draft = false
 
 [extra]
-image = "/static/top_banner.png"
+#image = "/static/top_banner.png"
 author = 'rochacbruno'
 +++
 
@@ -11,8 +11,22 @@ author = 'rochacbruno'
 
 # Sobre CodeShow
 
-Bruno Rocha, Engenheiro de Software na Red Hat, Membro da Python Software Foundation e programador
-com mais de 15 anos de experiência compartilha contéudo técnico com foco em código sobre Python, Rust, Flask, FastAPI e outros assuntos.
+Boas-vindas ao canal CodeShow!
+
+Este canal é um coletivo de criadores de conteúdo educacional voltado para programação,
+a missão deste canal é oferecer vídeos de alta qualidade didática simplificando os 
+conceitos de programação e diversas linguagens mostrando código de verdade.
+
+Conheça mais sobre o coletivo CodeShow em codeshow.com.br
+
+📺 Assine o canal do youtube:
+» http://bit.ly/canalcodeshow
+
+🐤 Siga no Twitter
+» https://twitter.com/codeshowbr
+
+📸 Siga no Instagram
+» https://instagram.com/codeshowbr
 
 ## Periodicidade
 

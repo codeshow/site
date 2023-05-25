@@ -30,7 +30,7 @@ taxonomies = [
 
 [extra]
 # blog_logo="/codeshow_logo.png" #will appear on top header
-blog_title="BRUNO ROCHA - CodeShow" #will appear on top header after logo
+blog_title="CodeShow - Tecnologia com foco no código!" #will appear on top header after logo
 
 ## i18n words
 label_tags = "Tags"
@@ -59,9 +59,9 @@ twitter_username="@rochacbruno" # OPTIONAL, Twitter User to help with metrics
 sidebar = [
     {name = "Links:", urls=[
         {name="▶ Youtube", url="https://www.youtube.com/c/codeshowbr?sub_confirmation=1", target="_blank"},
-        {name="📸 Instagram", url="https://instagram.com/rochacbruno", target="_blank"},
-        {name="🐤 Twitter", url="https://twitter.com/rochacbruno", target="_blank"},
-        {name="💻 Github", url="https://github.com/rochacbruno", target="_blank"},
+        {name="📸 Instagram", url="https://instagram.com/codeshowbr", target="_blank"},
+        {name="🐤 Twitter", url="https://twitter.com/codeshowbr", target="_blank"},
+        {name="💻 Github", url="https://github.com/codeshow", target="_blank"},
         {name="📺 Twitch", url="https://twitch.tv/codeshow", target="_blank"},
     ]},
     {name = "Conteúdo:", urls=[
@@ -72,7 +72,7 @@ sidebar = [
     ]},
 ]
 
-top_image = {path = '../static/top_banner.png', width=1015, height=250, op='fill', url='https://www.youtube.com/c/CodeShowBR?sub_confirmation=1', target="_blank"}
+#top_image = {path = '../static/top_banner.png', width=1015, height=250, op='fill', url='https://www.youtube.com/c/CodeShowBR?sub_confirmation=1', target="_blank"}
 
 authors = {rochacbruno={name='Bruno Rocha', avatar='https://avatars0.githubusercontent.com/u/458654?s=200&v=4'}}
 
